@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata: 
+  name: homework12-deployment
+  labels:
+    app: homework12
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: homework12
+  template:
+    metadata:
+      labels:
+        app: homework12
+    spec:
+      containers:
+      - name: homework12
+        image: dimamuro/homework10:ver1.0
+        ports:
+        - containerPort: 8080
